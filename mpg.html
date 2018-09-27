@@ -1,0 +1,55 @@
+<html>
+<head>
+ <title>The Calculate MPG Application</title>
+ <script>
+ 
+ var $ = function(id) {
+    return document.getElementById(id);
+};
+
+
+ var miles = prompt("Enter miles driven");
+ miles = parseFloat(miles);
+ var gallons =
+ prompt("Enter gallons of gas used");
+ gallons = parseFloat(gallons);
+ var mpg = miles/gallons;
+ mpg = parseInt(mpg);
+ 
+ document.write("Miles driven = " + miles+"<br>");
+ document.write("Gallons of gas = " + gallons+"<br>");
+ document.write("Miles per galon = " + mpg+"<br>");
+ 
+
+ 
+
+
+function myFunction() {
+//document.getElementById("miles_msg").innerHTML = miles;
+
+    $("miles_msg").innerHTML = miles;
+  $("gal_msg").innerHTML = gallons;
+  $("mpg_msg").innerHTML  = mpg;
+}
+
+ </script>
+</head>
+<body>
+ <!-- Will show after the JavaScript has run -->
+ 
+ 
+ <br><br>
+ 
+ <button id="demo" onclick="myFunction()">SEE</button>
+ 
+ <h1>The Miles per Gallon Application</h1> <br>
+	Miles driven = <span id="miles_msg"></span><br>
+	Gallons of gas = <span id="gal_msg"></span><br><br>
+	
+	Miles per galon = <span id="mpg_msg"></span><br><br>
+	
+	Thanks for using the Miles Per Gallon application
+ 
+ 
+</body>
+</html>
