@@ -1,0 +1,8 @@
+<!ELEMENT books (book)+>
+<!ELEMENT book (title, chapter+, price)>
+<!ATTLIST book publisher (Wiley | Pearson) #REQUIRED author CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT chapter (#PCDATA)>
+<!ATTLIST chapter chNo CDATA #REQUIRED>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price currency (euro | dollar) #IMPLIED>
