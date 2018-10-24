@@ -22,9 +22,9 @@ function displayResults(){
     
     var sum=0;
     var max = 0
-    var maxindex = 0;
+   /* var maxindex = 0;
     var maxindex1=scores.indexOf(Math.max(...scores));
-    alert(maxindex1);
+    alert(maxindex1);*/
     for(var i=0;i<scores.length;i++)
         {
             if(scores[i] > max)
@@ -35,17 +35,21 @@ function displayResults(){
             
             sum = sum + scores[i];
         }
-    var avg = sum/scores.length();
+    var avg = sum/scores.length;
     
-    $("results").innerHTML = "<h2>Resul</h2><br><p>Average Score = "+ avg +"<br> High Score = "+ names[maxindex] +" with a score of "+ scores[maxindex]  +"</p>";
+    $("results").innerHTML = "<h2>Results</h2><br><p>Average Score = "+ avg +"<br> High Score = "+ names[maxindex] +" with a score of "+ scores[maxindex]  +"</p>";
     
 }
 
 function displayScores(){
  
+     $("result2").innerHTML = "";
+    
+    $("result2").innerHTML = "<h2>Scores</h2>";
+    
     $("scores_table").innerHTML = "";
     
-    $("scores_table").innerHTML="<caption>Scores</caption><tr><th>Name</th><th>Score</th></tr>";
+    $("scores_table").innerHTML="<tr><td><b>Name</b></td><td><b>Score</b></td></tr>";
     
     for(var i=0;i<scores.length;i++)
         {
