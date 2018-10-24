@@ -18,10 +18,20 @@ var toggle = function() {
         div.removeAttribute("class");
     } else { 
          var divs = faqs.getElementsByTagName("div");
+        var hs = faqs.getElementsByTagName("h2");
         
          for (var i = 0; i < divs.length; i++ ) {
     	divs[i].removeAttribute("class");
+          
+           
     }
+        
+         for (var i = 0; i < hs.length; i++ ) {
+    	hs[i].removeAttribute("class");  
+           
+    }
+        
+        h2.setAttribute("class", "minus"); 
         
         
         div.setAttribute("class", "open"); 
