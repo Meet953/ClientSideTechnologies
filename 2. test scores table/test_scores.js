@@ -13,9 +13,17 @@ window.onload = function () {
 
 function addScore (){
     var name = $("name").value;
-    var score = $("score").value
-    names.push(name);
-    scores.push(score);
+    var score = $("score").value;
+    
+    if(name.length > 0 && score.length > 0 && score > 0 && score <= 100)
+        {
+             names.push(name);
+            scores.push(score);
+        }
+    else{
+        alert("Enter Correct Values first");
+    }
+   
 }
 
 function displayResults(){
@@ -33,9 +41,10 @@ function displayResults(){
                     maxindex = i;
                 }
             
-            sum = sum + scores[i];
+            sum = parseInt(sum) + parseInt(scores[i]);
         }
-    var avg = sum/scores.length;
+   
+    var avg = parseInt(sum)/scores.length;
     
     $("results").innerHTML = "<h2>Results</h2><br><p>Average Score = "+ avg +"<br> High Score = "+ names[maxindex] +" with a score of "+ scores[maxindex]  +"</p>";
     
