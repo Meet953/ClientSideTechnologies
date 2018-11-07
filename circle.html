@@ -1,0 +1,125 @@
+<html>
+<head>
+    
+    
+    </head>
+
+<body>
+    CIRCLE
+     <div id="demo1"></div>
+    <br>
+    <br>
+    <br>
+    STUDENT
+     <div id="demo2"></div>
+      <br>
+    <br>
+    <br>
+    CIRCLE CONSTRUCTORS
+     <div id="demo3"></div>
+       <br>
+    <br>
+    <br>
+    STUDENT CONSTRUCTORS
+     <div id="demo4"></div>
+    <script>
+    
+    var circle = {
+        radius:5,
+        
+        color:"blue",
+        
+        getDiameter: function(){
+            return this.radius*2;
+        },
+        
+        getArea: function(){
+            return Math.PI*Math.pow(this.radius,2);
+        }
+    };
+        
+       document.getElementById("demo1").innerHTML = "Radius : " + circle.radius + " <br>Color : "+ circle.color + " <br>Diameter :"+ circle.getDiameter() + " <br>Area : " +circle.getArea();
+      
+        
+        
+        var student = {
+          id:1,
+            name:"Billy",
+            address:"Croi Oige",
+            grades:[88,98,79,80],
+            addGrade: function(grade){
+                this.grades.push(grade);
+            },
+            getAverage: function(){
+                        
+                var total = 0;
+                for(var i = 0; i < this.grades.length; i++) {
+                    total += this.grades[i];
+                    }
+                    var avg = total / this.grades.length;
+                return avg;
+            }
+            
+        };student.getAverage();
+        
+         document.getElementById("demo2").innerHTML = "ID : " + student.id + " <br>Name : "+ student.name + " <br>Grades :"+ student.grades.toString() + " <br>Average : " +student.getAverage() + "<br>Adding Grade 50....";
+         student.addGrade(50) 
+              document.getElementById("demo2").innerHTML += "<br>Average : "+student.getAverage();
+   
+        
+        
+        
+    var Circle = function(radius,color) {
+ this.radius = radius;
+ this.color = color;
+};
+        
+        
+        Circle.prototype.getDiameter = function(){
+            return this.radius*2;
+        };
+        
+         Circle.prototype.getArea = function(){
+            return Math.PI*Math.pow(this.radius,2);
+        };
+        
+        var circle1 = new Circle(10,"purple");
+        
+        
+          document.getElementById("demo3").innerHTML = "Radius : " + circle1.radius + " <br>Color : "+ circle1.color + " <br>Diameter :"+ circle1.getDiameter() + " <br>Area : " +circle1.getArea();
+        
+        
+        
+        
+        var Student = function(id,name,address) {
+ this.id = id;
+ this.name = name;
+            this.address = address;
+ this.grades = [];
+};
+        
+        
+        Student.prototype.addGrade = function(grade){
+            this.grades.push(grade);
+        };
+        
+         Circle.prototype.getAverage = function(){
+            var total = 0;
+                for(var i = 0; i < this.grades.length; i++) {
+                    total += this.grades[i];
+                    }
+                    var avg = total / this.grades.length;
+                return avg;
+        };
+        
+        var student1 = new Student(2,"William","Croi Oige");
+        
+          document.getElementById("demo4").innerHTML = "ID : " + student1.id + " <br>Name : "+ student1.name +   "<br>Adding Grade 50....<br>Adding Grade 68....<br>Adding Grade 77....";
+         student.addGrade(50); student.addGrade(68);student.addGrade(77);
+              document.getElementById("demo4").innerHTML += "<br>Average : "+student.getAverage();
+    
+    </script>
+    
+   
+    
+    </body></html>
