@@ -9,6 +9,7 @@ form{
 }
 
 ul li{
+        border-top : .1px solid #eee;
 padding: 20px 20px 0px 0px;
      
 }
